@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+{% if user.is_authenticated %}
+<p><a href="{% url 'create' %}" class="btn btn-primary">New</a></p>
+{% endif %}
+<div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            	{% for obj in object_list %}
+                <div class="post-preview">
+                    <a href="{% url 'detail' obj.id %}">
+                        <h2 class="post-title">
+                           {{ obj.content }}
+                        </h2>
+                    </a>
+                    <p class="post-meta">
+						 {{ obj.posted_date }}
+                    </p>
+                </div>
+                {% endfor %}
+ </div> 
+{% endblock %}
