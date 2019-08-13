@@ -872,7 +872,7 @@ Djangoの入力フォームテンプレートは以下の様に記述します�
  
 <form method="POST">{% csrf_token %}
 <table class="table">
-{‌{ form }}
+{{ form }}
 </table>
 <button type="submit">送信</button>
 </form>
